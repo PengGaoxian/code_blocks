@@ -1,0 +1,21 @@
+'.source.c':
+  'init':
+    'prefix': 'init'
+    'body': '''
+    #include <linux/module.h>
+    #include <linux/init.h>
+
+    static int __init__ ${1:module_name}_init(void) {
+        ${2://body}
+    	return 0;
+    }
+    static void __exit__ ${1:module_name}_exit(void) {
+        ${3://body}
+    	return;
+    }
+    module_init(${1:module_name}_init);
+    module_exit(${1:module_name}_exit);
+
+    MODULE_LICENSE("Dual BSD/GPL");
+    MODULE_DESCRIPTION("${4:description}");
+    '''
