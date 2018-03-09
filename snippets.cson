@@ -1,6 +1,6 @@
 '.source.c':
-  'init':
-    'prefix': 'init'
+  'main':
+    'prefix': 'main'
     'body': '''
     #include <linux/module.h>
     #include <linux/init.h>
@@ -18,4 +18,23 @@
 
     MODULE_LICENSE("Dual BSD/GPL");
     MODULE_DESCRIPTION("${4:description}");
+    '''
+
+'.source.java':
+  'main':
+    'prefix': 'main'
+    'body': '''
+    '''
+  'class':
+  'read':
+  'write':
+  'if':
+  'switch'
+  'for':
+  'try':
+    
+'.source.python':
+  'main':
+    'prefix': 'main'
+    'body': '''
     '''
